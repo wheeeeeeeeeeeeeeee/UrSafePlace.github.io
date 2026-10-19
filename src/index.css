@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #2c3330;
+  background: #f7f3ea;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 8% -10%, rgba(183, 166, 203, 0.45), transparent 32%),
+    radial-gradient(circle at 100% 0%, rgba(122, 147, 168, 0.28), transparent 26%),
+    #f7f3ea;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: #c9dfcd;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-floaty {
+    animation: none !important;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-3xl border border-sage-100 bg-paper shadow-soft;
+  }
+
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-500 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-sage-500 px-5 py-3 text-sm font-bold text-white transition hover:bg-sage-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-500 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-soft {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-lilac-100 px-5 py-3 text-sm font-bold text-lilac-700 transition hover:bg-lilac-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-500 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-sage-200 bg-white px-5 py-3 text-sm font-bold text-ink transition hover:bg-sage-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-500 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .field {
+    @apply w-full rounded-2xl border border-sage-200 bg-white px-4 py-3 text-base text-ink outline-none ring-sage-300 placeholder:text-ink-soft/70 focus:ring-2;
+  }
+
+  .chip {
+    @apply inline-flex min-h-10 shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-sage-200 bg-white px-3 py-2 text-sm font-semibold text-ink;
+  }
+}
